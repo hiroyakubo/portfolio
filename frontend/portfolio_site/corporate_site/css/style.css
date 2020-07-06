@@ -1,0 +1,471 @@
+* {
+  margin:0; 
+  padding:0;
+}
+
+html {
+  /* 10px */
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+}
+.f-5rem {
+  font-size: 5rem;
+}
+.p-2rem {
+  font-size: 2rem;
+}
+
+/* header */
+.navbar {
+  margin-bottom: 0px;
+}
+
+/* main */
+/* intro */
+#intro-header {
+  background-image  : url("../data/image/intro-background.jpg");
+  width             : 100%;
+  text-align        : center;
+  background-color  : rgb(245, 245, 245);
+}
+
+#intro-header h1 {
+  margin      : 0px;
+  font-size   : 5rem;
+  position    : relative;
+  top         : 50%;
+  font-family : Georgia, 'Times New Roman', Times, serif;
+}
+
+/* feature */
+#feature {
+  padding-top: 15%;
+  padding-bottom: 10%;
+  background-color: rgb(245, 245, 245);
+}
+.feature-1 {
+  background-image: url("../data/image/feature-1.jpg");
+  background-size: cover;
+}
+.feature-2 {
+  background-image: url("../data/image/feature-2.jpg");
+  background-size: cover;
+}
+.feature-3 {
+  background-image: url("../data/image/feature-3.jpg");
+  background-size: cover;
+}
+.feature-4 {
+  background-image: url("../data/image/feature-4.jpg");
+  background-size: cover;
+}
+.feature-title {
+  margin-bottom : 5%;
+  color         : #364e96;
+  padding       : 0.5em 0;
+  border-top    : solid 3px #364e96;
+  border-bottom : solid 3px #364e96;
+}
+.feature-title h2 {
+  text-align  : center;
+  font-size   : 5rem;
+}
+.jumbotron {
+  height: 400px;
+  color: white;
+}
+.jumbotron h3 {
+  font-size: 5rem;
+}
+.jumbotron p {
+  font-size: 3rem;
+}
+
+/* shop */
+#shop-info {
+  padding-bottom: 5%;
+  margin-top: 5%;
+}
+.shop-info-title {
+  margin-bottom : 5%;
+  color         : #364e96;
+  padding       : 0.5em 0;
+  border-top    : solid 3px #364e96;
+  border-bottom : solid 3px #364e96;
+}
+.shop-info-title h2 {
+  text-align  : center;
+  font-size   : 5rem;
+  margin      : 5% 0%;
+}
+.carousel-item {
+  text-align: center;
+  font-size: 2rem;
+}
+.carousel-item h3 {
+  font-size: 4rem;
+}
+.carousel-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+}
+.shop-caption {
+  text-align: left;
+}
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+.carousel-indicators {
+  visibility: hidden;
+}
+
+/* service */
+#service {
+  padding-top: 10%;
+  padding-bottom: 5%;
+  background-color: rgb(245, 245, 245);
+}
+.service-title {
+  margin-bottom : 5%;
+  color         : #364e96;
+  padding       : 0.5em 0;
+  border-top    : solid 3px #364e96;
+  border-bottom : solid 3px #364e96;
+}
+.service-title h2 {
+  text-align  : center;
+  font-size   : 5rem;
+  margin       : 5% 0%;
+}
+.service-item img {
+  width: 100%;
+}
+
+/* info */
+#info {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.info-title {
+  text-align    : center;
+  margin-bottom : 5%;
+  color         : #364e96;
+  padding       : 0.5em 0;
+  border-top    : solid 3px #364e96;
+  border-bottom : solid 3px #364e96;
+}
+.info-title i {
+  float   : left;
+  display : none;
+}
+.info-item {
+  border-bottom: 1px solid rgb(212, 211, 211);
+}
+
+/* contact */
+#contact {
+  background-color  : rgb(245, 245, 245);
+  padding-top       : 5%;
+  padding-bottom    : 10%;
+}
+.test-form {
+  width: 80%;
+}
+.contact-title {
+  margin-bottom : 5%;
+  text-align    : center;
+  color         : #364e96;
+  padding       : 0.5em 0;
+  border-top    : solid 3px #364e96;
+  border-bottom : solid 3px #364e96;
+}
+form {
+  border: 1px solid black;
+  background-color: white;
+}
+form label {
+  font-size: 2rem;
+  width: 100%;
+}
+.required::after {
+  content: '必須';
+  color: rgb(238, 139, 139);
+  margin-left: 5%;
+  font-size: 1rem;
+}
+.any::after {
+  content     : '任意';
+  color       : rgb(139, 170, 238);
+  margin-left : 5%;
+  font-size   : 1rem;
+}
+.form-group-wrapper {
+  padding-left    : 5%;
+  padding-right   : 5%;
+  padding-bottom  : 5%;
+}
+.form-group {
+  padding         : 30px 0%;
+  margin          : 0;
+  border-bottom   : 1px solid rgb(201, 200, 200);
+}
+.form-group input {
+  background-color: rgb(250, 250, 250);
+}
+.form-group textarea {
+  background-color: rgb(250, 250, 250);
+  width: 90%;
+}
+.split input {
+  width: 45%;
+  display: inline;
+}
+.submit {
+  text-align: center;
+}
+.submit input {
+  display       : inline-block;
+  border-radius : 5%;
+  font-size     : 2rem;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 10px 12px;
+  margin-top    : 5%;
+  background    : #000066;
+  color         : #ffffff;
+  line-height   : 1em;
+  transition    : .3s;
+  box-shadow    : 6px 6px 3px #666666;
+  border        : 2px solid #000066;
+}
+.submit input:hover {
+  box-shadow    : none;
+  color         : #000066;
+  background    : #ffffff;
+}
+
+/* footer */
+footer {
+  text-align        : center;
+  height            : 80px;
+  padding-top       : 20px;
+  color             : white;
+  background-color  : black;
+}
+footer i {
+  margin: 0px 15px;
+}
+footer p {
+  margin-top: 10px;
+}
+
+@media screen and (max-width:544px) {
+  /* //480pxまでのサイズ */
+}
+@media screen and (min-width:544px) and (max-width:768px) {
+  /* //481px~768pxまでのサイズ */
+  #intro-header h1 {
+    font-size: 8rem;
+  }
+  
+  .feature-title h2 {
+    font-size: 10rem;
+  }
+
+  .shop-info-title h2 {
+    font-size: 10rem;
+  }
+
+  .service-title h2 {
+    font-size: 10rem;
+  }
+  .service-item img{
+    width: 100%;
+  }
+  .service-item p {
+    font-size: 2rem;
+  }
+  .service-item {
+    display     : flex;
+    align-items : flex-start;
+  }
+  .service-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .service-item img {
+    width: 50%;
+  }
+
+  .info-item span {
+    font-size: 2rem;
+  }
+  .info-item p {
+    font-size: 2rem;
+  }
+
+  .split input {
+    width: 200px;
+  }
+  .input-all-width {
+    width: 400px;
+  }
+  .form-group input{
+    height: 3rem;
+  }
+  .form-group textarea {
+    height: 5rem;
+    width: 400px;
+  }
+}
+@media screen and (min-width:769px) and (max-width:1200px) {
+  /* //769px~のサイズ */
+  #intro-header h1 {
+    font-size: 12rem;
+  }
+
+  .feature-title h2 {
+    font-size: 10rem;
+  }
+
+  .shop-info-title h2 {
+    font-size: 10rem;
+  }
+  .shop-caption {
+    text-align: center;
+  }
+
+  .service-title h2 {
+    font-size: 10rem;
+  }
+  .service-item {
+    display             : -webkit-flex;
+    display             : flex;
+    -webkit-align-items : center;
+    align-items         : center;
+  }
+  .service-item img{
+    width: 100%;
+  }
+  .service-item span {
+    font-size: 3rem;
+  }
+  .service-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .service-item img {
+    width: 50%;
+  }
+
+  .info-item span {
+    font-size: 2rem;
+  }
+  .info-item p {
+    font-size: 2rem;
+  }
+
+  .form-group input{
+    height: 3rem;
+  }
+  .form-group textarea {
+    height: 5rem;
+  }
+  .split input {
+    width: 250px;
+  }
+  .input-all-width {
+    width: 550px;
+  }
+  .form-group textarea {
+    width: 550px;
+  }
+}
+@media screen and (min-width:1200px) {
+  /* //769px~のサイズ */  
+  .navbar-brand {
+    font-size: 2rem;
+  }
+  .navbar-nav {
+    font-size: 1.5rem;
+  }
+
+  #intro-header h1 {
+    font-size: 12rem;
+  }
+
+  .feature-title h2 {
+    font-size: 10rem;
+  }
+  .jumbotron {
+    height              : 600px;
+    background-size     : cover;
+    background-position : 40% 60%;
+  }
+
+  .shop-info-title h2 {
+    font-size: 10rem;
+  }
+
+  .service-title h2 {
+    font-size: 10rem;
+  }
+  .service-item {
+    display             : -webkit-flex;
+    display             : flex;
+    -webkit-align-items : center;
+    align-items         : center;
+  }
+  .service-item img{
+    width: 100%;
+  }
+  .service-item span {
+    font-size: 4rem;
+  }
+  .service-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .service-item img {
+    width: 50%;
+  }
+
+  .shop-caption {
+    text-align: center;
+  }
+  .carousel-item img {
+    height: 400px;
+    object-fit: contain;
+  }
+
+  .info-item span {
+    font-size: 2rem;
+  }
+  .info-item p {
+    font-size: 2rem;
+  }
+
+  .form-group input{
+    height: 3rem;
+  }
+  .form-group textarea {
+    height: 5rem;
+  }
+  .split input {
+    width: 250px;
+  }
+  .input-all-width {
+    width: 550px;
+  }
+  .form-group textarea {
+    width: 550px;
+  }
+}
