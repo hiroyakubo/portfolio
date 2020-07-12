@@ -1,0 +1,251 @@
+* {
+  margin:0; 
+  padding:0;
+}
+
+/* header */
+header {
+  top: 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid black;
+}
+.nav-bar {
+  list-style: none;
+  margin: 0;
+  display: none;
+  justify-content: center;
+}
+.nav-bar a {	
+  text-decoration: none;
+  color: #4b4b4b;
+}
+.header-logo {
+  width: 100px;
+}
+.nav-bar-item {
+  margin: 0 0 0 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* main */
+main {
+  padding-top: 20px;
+}
+.bg-slider {
+	width: 100%;
+	height: 100vh;
+	background-position:center center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.bg-slider__title{
+	color: #fff;
+	font-size: 48px;
+	line-height: 1.5;
+	font-weight: bold;
+	text-align:center;
+	text-shadow: 1px 1px 1px #000;
+}
+
+/* feature */
+.feature-item {
+  opacity: 0;
+  transform : translate(0px, 100px);
+  transition : all 1500ms;
+}
+.feature-item.scrollin{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.feature-item-text {
+  color: white;
+  background-color: rgb(85, 33, 88);
+}
+.feature-item-title {
+  font-size: 40px;
+}
+.feature-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* menu */
+.menu-item {
+  width: 100%;
+  height: 500px;
+  font-size: 80px;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  opacity: 0;
+  transform : translate(-400px, 0px);
+  transition : all 1500ms;
+}
+.menu-item.scrollin{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.menu-morning {
+  background-image: url("../data/image/shop-3.jpg");
+}
+.menu-lunch {
+  background-image: url("../data/image/shop-4.jpg");
+}
+.menu-dinner {
+  background-image: url("../data/image/shop-2.jpg");
+}
+.event-time {
+  font-size: 40px;
+  color: black;
+  -webkit-text-stroke: 1px white;
+}
+
+/* plan */
+.plan {
+  padding-top: 50px;
+  background-color: rgb(248, 244, 244);
+}
+.plan-item {
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+  font-size: 50px;
+  border: 1px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../data/image/plan-background.jpg");
+  background-size: cover;
+  opacity: 0;
+  transform : translate(0px, 0px);
+  transition : all 2000ms;
+}
+.plan-item.scrollin{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* instagram */
+.instagram {
+  height: 500px;
+  padding: 40px;
+  background-color: rgb(248, 244, 244);
+}
+.instagram-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid palevioletred;
+  background-color: white;
+}
+.instagram-box img {
+  width: 200px;
+}
+
+
+/* map */
+.map {
+  color: white;
+  background-color: rgb(197, 197, 197);
+}
+.shop-info-list {
+  margin-left: 20px;
+  padding: 30px 0;
+}
+.shop-info-list li {
+  list-style: none;
+}
+
+/* footer */
+footer {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: black;
+  font-size: 10px;
+}
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 5px;
+}
+footer ul li {
+  margin: 0 10px;
+}
+footer p {
+  padding-top: 5px;
+}
+
+@media screen and (min-width:481px) and (max-width:768px) {
+  /* //481px~768pxまでのサイズ */
+}
+@media screen and (min-width:769px) and (max-width:1000px) {
+  /* //769px~1200pxのサイズ */
+  .nav-bar {
+    display: flex;
+  }
+}
+@media screen and (min-width:1000px) {
+  /* //1200px~のサイズ */
+  body {
+    margin: 0 auto;
+    width: 1000px;
+  }
+
+  /* header */
+  .nav-bar {
+    display: flex;
+  }
+
+  /* about */
+  .about {
+    display: flex;
+    justify-content: center;
+  }
+  .about-main {
+    width: 750px;
+  }
+  .sub-img {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-sub {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  /* feature */
+  .feature {
+    margin: 50px 0;
+    display: flex ;
+    justify-content: center;
+  }
+  .feature-item {
+    margin: 0px 10px;
+    border: 5px dotted gray;
+  }
+  .feature-item img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+}
