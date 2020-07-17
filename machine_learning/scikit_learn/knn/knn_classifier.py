@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
@@ -39,6 +41,8 @@ def make_data(is_plot=False):
         plt.scatter(d2_x, d2_y, c="green")
         plt.scatter(d3_x, d3_y, c="blue")
         plt.scatter(d4_x, d4_y, c="black")
+
+        os.makedirs("results", exist_ok=True)
         plt.savefig("results/classifier_data.png")
         plt.cla()
 
@@ -79,4 +83,5 @@ pred = clf.predict(x_test)
 print(clf.score(x_test, y_test))
 
 plot_result(x_test, pred)
+os.makedirs("results", exist_ok=True)
 plt.savefig("results/classifier_result.png")

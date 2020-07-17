@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsRegressor
@@ -13,6 +15,8 @@ y_noise = y_noise.reshape(-1, 1)
 plt.scatter(x, y_noise, label="train")
 plt.xlim(-10, 110)
 plt.ylim(-10, 1100)
+
+os.makedirs("results", exist_ok=True)
 plt.savefig("results/regressor_data.png")
 
 # 学習データとテストデータに分割
