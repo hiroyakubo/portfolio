@@ -1,20 +1,3 @@
-var window_h = $(window).height();
-$("#wh span").text(window_h);
-
-//スクロールイベント
-//header固定
-$(window).on('scroll',function(){     
-  var heroBottom = $('header').height();
-  if($(window).scrollTop() > heroBottom){
-      $('.nav-list').addClass('header-fixed'); 
-  }
-  else{
-    $('.nav-list').removeClass('header-fixed');   
-  }
-});
-
-$(window).trigger('scroll');
-
 function switchByWidth(){
   if (window.matchMedia('(max-width: 767px)').matches) {
       //スマホ処理
@@ -62,6 +45,23 @@ function switchByWidth(){
 window.onload = switchByWidth;
 window.onresize = switchByWidth;
 
+var window_h = $(window).height();
+$("#wh span").text(window_h);
+
+//スクロールイベント
+//header固定
+$(window).on('scroll',function(){     
+  var heroBottom = $('header').height();
+  if($(window).scrollTop() > heroBottom){
+      $('.nav-list').addClass('header-fixed'); 
+  }
+  else{
+    $('.nav-list').removeClass('header-fixed');   
+  }
+});
+
+$(window).trigger('scroll');
+
 //header表示場所
 $(document).ready(function () {
   hsize = $(window).height();
@@ -81,4 +81,9 @@ $(window).resize(function () {
   hsize = $(window).height();
   $("#header-title").css("height", hsize + "px");
   $("#header-title h1").css("top", hsize/2 -100 + "px");
+});
+
+$(document).on('click', '#send', function() {
+  console.log('click');
+  alert("大変申し訳ありません。\n現在問い合わせフォームは調整中です。\n御用の方はツイッターのDMにてご連絡ください。");
 });
