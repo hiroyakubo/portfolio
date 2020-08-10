@@ -1,0 +1,14 @@
+@import url("common.css");
+
+
+.message-info {
+    text-align: right;
+}
+
+.message-info img {
+    display: inline;
+}
+
+.message-info a {
+    display: inline;
+}

@@ -1,0 +1,76 @@
+{% extends "top_base.html" %}
+{% load static %}
+
+{% block title %}ユーザーページ{% endblock %}
+
+{% block import_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/user_page.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    {% if not is_anonymous %}
+        <nav>
+            <ul class="nav-list bottom-border">
+                <li class="nav-list-item"><h2>ユーザーページ</h1></li>
+                <li class="nav-list-item"><a href="{% url 'home' %}" class="no-decoration">ホーム</a></li>
+                <li class="nav-list-item"><a href={% url 'logout' %} class="no-decoration">ログアウト</a></li>   
+            </ul>
+        </nav>
+    {% endif %}
+    <div class="profile bottom-border top-margin">
+        <ul class="nav-list">
+            <li class="nav-list-item"><h2>プロフィール</h2></li>
+            <li class="nav-list-item">
+                {% if is_the_person %}
+                    <a href="{% url 'edit' user.username %}">編集</a>
+                {% endif %}
+            </li>
+        </ul>
+        <img src="{{ photo }}" alt="プロフィール画像" class="profile-image">
+        <ul>
+            <li>名前 : {{ user.username }}</li>
+            <li>年齢 : {{ age }}</li>
+        </ul>
+    </div>
+    {% if is_the_person %}
+        <div class="tweet bottom-border top-margin">
+            <div class="create-post">
+                <h2>新しい投稿を作成する</h2>
+            </div>
+            <form method="POST">
+                <div class="post-charfield">
+                    {% csrf_token %}
+                    {{ tweet_form.as_p }}
+                </div>
+                <input class="modify" type="submit" value="投稿">
+            </form>
+        </div>
+    {% endif %}
+    <div class="recent-post bottom-border top-margin">
+        <p class="bottom-border">{{ user.username }}さんの投稿一覧</p>
+        {% for t in tweet_list %}
+            <div class="individual-post bottom-border">
+                <div class="individual-message">
+                    <a href="{% url 'tweet_detail' user.username t.id %}" class="post-detail">
+                        <p>{{ t.message }}</p>
+                    </a>
+                </div>
+                <div class="message-info">
+                    <div class="like-button" data-tweet-id="{{ t.obj.id }}" data-comment-id="-1" data-count="{{ t.like }}">
+                        <img src="/static/image/like_16.png" alt="like">
+                        <span class="like-counter">
+                            {% if t.like >= 0 %}{{ t.like }}{% endif %}
+                        </span>
+                    </div>
+                    <a href="{% url 'delete_tweet' user.pk t.id %}" class="individual-delete no-decoration">この投稿を削除</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block import_js %}
+<script src="{% static 'js/like.js' %}"></script>
+{% endblock %}

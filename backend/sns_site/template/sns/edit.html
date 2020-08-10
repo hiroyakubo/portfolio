@@ -1,0 +1,27 @@
+{% extends "top_base.html" %}
+{% load static %}
+
+{% block title %}プロフィール編集{% endblock %}
+
+{% block import_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/edit.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <nav>
+        <ul class="nav-list bottom-border">
+            <li class="nav-list-item"><h2>プロフィール編集</h2></li>
+            <li class="nav-list-item"><a href="{% url 'user_page' user %}" class="no-decoration">マイページ</a> </li>
+        </ul>
+    </nav>
+    <img src="{{ photo }}" alt="プロフィール写真" class="profile-image">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ username_form.as_p }}
+        {{ email_form.as_p }}
+        {{ profile_form.as_p }}
+        <input class="modify" type="submit" value="変更">
+    </form>   
+</div>
+{% endblock %}

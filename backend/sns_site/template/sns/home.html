@@ -1,0 +1,45 @@
+{% extends "top_base.html" %}
+{% load static %}
+
+{% block title %}SNS SITE{% endblock %}
+
+{% block import_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <nav>
+        <ul class="nav-list bottom-border">
+            <li class="nav-list-item"><h2>ホーム</h2></li>
+            <li class="nav-list-item"><a href="{% url 'user_page' user %}" class="no-decoration">ユーザーページ</a></li>
+            <li class="nav-list-item"><a href="{% url 'logout' %}" class="no-decoration">ログアウト</a></li>
+        </ul>
+    </nav>
+    <div class="post-list">
+        <div class="post-title bottom-border">
+            <p>最新の投稿</p>
+        </div>
+        <div class="post-item">
+            {% for t in tweet_list %}
+                <div class="individual-post bottom-border">                
+                    <div class="post-item-list">
+                        <p class="margin-0"><a href="{% url 'user_page' t.obj.user.username %}" class="item-header"><img src="{{ t.photo }}" alt="img" class="post-image"> {{ t.obj.user.username }}</a></p>
+                        <a href="{% url 'tweet_detail' t.obj.user.username t.obj.id %}" class="post-detail"><p class="margin-0">{{ t.obj.tweet }}</p></a>
+                    </div>
+                    <div class="like-button" data-tweet-id="{{ t.obj.id }}" data-comment-id="-1" data-count="{{ t.like }}">
+                        <img src="/static/image/like_16.png" alt="like">
+                        <span class="like-counter">
+                            {% if t.like >= 0 %}{{ t.like }}{% endif %}
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block import_js %}
+<script src="{% static 'js/like.js' %}"></script>
+{% endblock %}

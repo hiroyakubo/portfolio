@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title%}{% endblock%}</title>
+    {% block import_css %}{% endblock %}
+    <link rel="icon" href="{% static 'image/favicon.ico' %}">
+  </head>
+  <body>
+    <div class="content-container">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    {% block import_js %}{% endblock %}
+  </body>
+</html>

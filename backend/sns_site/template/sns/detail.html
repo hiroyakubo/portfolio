@@ -1,0 +1,48 @@
+{% extends "top_base.html" %}
+{% load static %}
+
+{% block title %}SNS SITE{% endblock %}
+{% block import_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    {% if not is_anonymous %}
+        <nav>
+            <ul class="nav-list bottom-border">
+                <li class="nav-list-item"><a href="{% url 'user_page' user.username %}" class="no-decoration">ユーザーページ</a></li>
+                <li class="nav-list-item"><a href="{% url 'home' %}" class="no-decoration">ホーム</a></li>
+                <li class="nav-list-item"><a href={% url 'logout' %} class="no-decoration">ログアウト</a></li>    
+            </ul>
+        </nav>
+    {% endif %}
+    <div class="post-item">
+        <p class="bottom-border"><a href="{% url 'user_page' tweeter %}" class="item-header"><img src="{{ img_path }}" alt="img" class="post-image">{{ tweeter }}</a>さんの投稿</p>
+        <p>{{ tweet_item }}</p>
+        {% if not is_anonymous %}
+            <form method="POST" class="bottom-border">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <input class="modify" type="submit" value="投稿">
+            </form>
+        {% endif %}
+        <p>コメント一覧</p>
+        <div>
+            {% for c in comment_list %}
+                <div class="bottom-border">
+                    <p class="margin-0"><a href="{% url 'user_page' c.comment.user.username %}" class="item-header"><img src="{{ c.photo }}" alt="img" class="post-image"> {{ c.comment.user.username }}</a></p>
+                    <p>{{ c.comment.comment_item }}</p>
+                    {% if request_user == c.comment.tweeter %}
+                        <a href="{% url 'delete_comment' c.comment.tweeter.username c.comment.tweet.pk c.comment.pk %}" class="individual-delete no-decoration">このコメントを削除</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block import_js %}
+<script src="{% static 'js/like.js' %}"></script>
+{% endblock %}

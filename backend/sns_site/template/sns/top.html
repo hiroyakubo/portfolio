@@ -1,0 +1,41 @@
+{% extends "top_base.html" %}
+{% load static %}
+
+{% block title %}SNS SITE{% endblock %}
+
+{% block import_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/top.css' %}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-list-item"><a href="/accounts/signup" class="no-decoration">新規登録</a></li>
+            <li class="nav-list-item"><a href="/accounts/login" class="no-decoration">ログイン</a></li>
+            <li class="nav-list-item"><a href="/admin/" class="no-decoration">管理者ログイン</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="monitor-height align-center site">
+    <h1>SNS site</h1>
+</div>
+<div class="monitor-height align-center thinking">
+    <p>自分の考えを投稿</p>
+</div>
+<div class="monitor-height align-center hobby">
+    <p>趣味の合う人を<br>見るけることができる</p>
+</div>
+<div class="register">
+    <p>会員登録はこちら</p>
+    <ul class="register-list">
+        <li><a class="header-signup" href="/accounts/signup">新規登録</a></li>
+        <li><a class="header-login" href="/accounts/login">ログイン</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block import_js %}
+<script src="{% static 'js/top.js' %}"></script>
+{% endblock %}

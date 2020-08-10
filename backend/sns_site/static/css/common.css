@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+  }
+
+.content-container {
+    display: flex;
+    justify-content: center;
+}
+.content-wrapper {
+    margin: 0;
+    width: 700px;
+    border-right: 1px solid gainsboro;
+    border-left: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+}
+.bottom-border {
+    border-bottom: 1px solid gainsboro;
+}
+.margin-0 {
+    margin: 0;
+}
+.no-decoration {
+    text-decoration: none;
+    color: black;
+}
+.nav-list {
+    padding: 0%;
+}
+.nav-list-item {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.modify {
+    margin-bottom: 3%;
+    margin-left: 3%;
+}
+.post-detail {
+    text-decoration: none;
+    color: black;
+}
+.post-item-list {
+    padding: 20px 0;
+}
+.post-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.item-header {
+    text-decoration: none;
+    color: black;
+}
+.like-button {
+    text-align: right;
+}
+.like-button img {
+    cursor: pointer;
+}
+.individual-delete {
+    text-align: right;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
