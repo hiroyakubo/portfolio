@@ -9,9 +9,3 @@
 - mobile first
 
 website : http://kubohiroya-portfolio.com/
-
-portfolio site image
-![portfolio_site](data/image/portfolio_site.png)
-
-corporate site image
-![corporate_site](data/image/corporate_site.png)
