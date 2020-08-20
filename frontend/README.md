@@ -7,5 +7,3 @@
 - bootstrap4
 - responsive design
 - mobile first
-
-website : http://kubohiroya-portfolio.com/

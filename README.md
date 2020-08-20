@@ -1,6 +1,9 @@
 # portfolio
 Kubo Hiroya's portfolio
 
+## site
+website : http://kubohiroya-portfolio.com/
+
 ## skills
 
 ### frontend
