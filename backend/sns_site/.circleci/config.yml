@@ -1,0 +1,26 @@
+version: 2
+jobs:
+    build:
+        working_directory: ~/django-project
+        docker: 
+            - image: circleci/python:3.7.3
+        steps:
+            - checkout
+            - run: sudo chown -R circleci:circleci /usr/local/bin
+            - run: sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
+            - restore_cache:
+                key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+            - run: 
+                command: |
+                    sudo pip3 install pipenv
+                    pipenv install
+                name: install dependencies
+            - save_cache: 
+                key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+                paths:
+                  - ".venv"
+                  - "/usr/local/bin"
+                  - "/usr/local/lib/python3.6/site-packages"
+            - run:
+                command: pipenv run python3 manage.py test
+                name: Test

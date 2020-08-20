@@ -10,6 +10,8 @@
     - 管理ユーザーログイン機能
 
 - Docker
+- CircleCI
+    - 実際のgithub-CircleCIの連携はバックエンドポートフォリオ開発用のプライベートリポジトリで行っている。
 
 ## デプロイ
 coming soon.
