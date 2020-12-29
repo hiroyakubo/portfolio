@@ -26,6 +26,8 @@ website : http://kubohiroya-portfolio.com/
     - 管理ユーザーログイン機能
 
 - Docker
+- CircleCI
+- AWS
 
 ### machine learning
 - scikit learn
