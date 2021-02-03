@@ -9,6 +9,8 @@ verify_ssl = true
 requests = "*"
 bs4 = "*"
 lxml = "*"
+selenium = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"
